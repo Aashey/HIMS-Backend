@@ -60,10 +60,7 @@ const createTest = (req, res) => {
         else
           return res.status(201).json({
             message: "Test created successfully !",
-            id: this.lastID,
-            name,
-            code,
-            price,
+            data: { id: this.lastID, name, code, price },
           });
       });
     },
@@ -125,10 +122,12 @@ const updateTest = (req, res) => {
 
         return res.status(201).json({
           message: "Test updated successfully !",
-          id,
-          name,
-          code,
-          price,
+          data: {
+            id,
+            name,
+            code,
+            price,
+          },
         });
       });
     },
