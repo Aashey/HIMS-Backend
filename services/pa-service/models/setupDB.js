@@ -1,11 +1,9 @@
 const sqlite3 = require("sqlite3").verbose();
-
 function setupDB() {
-  const db = new sqlite3.Database("./db/hims.db", (err) => {
+  const db = new sqlite3.Database("./db/pa.db", (err) => {
     if (err) console.log(`Error connecting to the database.`, err.message);
     else console.log(`Connected to the database.`);
   });
-
   // Test Names Table
   db.run(`
          CREATE TABLE IF NOT EXISTS test_names (

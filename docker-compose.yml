@@ -1,0 +1,20 @@
+version: "3"
+services:
+  pa-service:
+    build: ./services/pa-service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+  user-service:
+    build: ./services/user-service
+    ports:
+      - "3002:3002"
+  lab-service:
+    build: ./services/lab-service
+    ports:
+      - "3003:3003"
+  db:
+    image: sqlite:latest
+    volumes:
+      - ./db:/db

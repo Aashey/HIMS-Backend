@@ -11,11 +11,11 @@ setupDB();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/pa/setup/tests", testRoutes);
+app.use("/api/pa/setup/tests", testRoutes);
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
