@@ -137,7 +137,7 @@ const updateTest = (req, res) => {
 };
 
 // Delete a test
-const deleteTests = (req, res) => {
+const deleteTest = (req, res) => {
   const { id } = req.params;
 
   const query = `DELETE FROM test_names where id = ?`;
@@ -150,4 +150,4 @@ const deleteTests = (req, res) => {
   });
 };
 
-module.exports = { createTest, getTests, getTest, updateTest, deleteTests };
+module.exports = { createTest, getTests, getTest, updateTest, deleteTest };
