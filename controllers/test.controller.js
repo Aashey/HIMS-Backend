@@ -27,6 +27,7 @@ const checkTestExists = (name, code, id, callback, mode) => {
   }
 };
 
+// helper function to send response when test exists
 const testExistsResponse = (res, row, name, code) => {
   if (row.name === name)
     return res.status(400).json({ message: "Test name is alrady taken !" });
@@ -34,7 +35,7 @@ const testExistsResponse = (res, row, name, code) => {
     return res.status(400).json({ message: "Test code is alrady taken !" });
 };
 
-// Create Test
+// Create a test
 const createTest = (req, res) => {
   const { name, code, price } = req.body;
 
@@ -70,7 +71,7 @@ const createTest = (req, res) => {
   );
 };
 
-// Get Tests
+// Get all tests
 const getTests = (req, res) => {
   const query = `SELECT * FROM test_names`;
 
@@ -82,7 +83,7 @@ const getTests = (req, res) => {
   });
 };
 
-// Get a single Test
+// Get a single test
 const getTest = (req, res) => {
   const { id } = req.params;
   if (!id) return res.status(400).json({ message: "Test id is required !" });
@@ -96,7 +97,7 @@ const getTest = (req, res) => {
   });
 };
 
-// Update Test
+// Update a test
 const updateTest = (req, res) => {
   const { id } = req.params;
   const { name, code, price } = req.body;
@@ -135,7 +136,7 @@ const updateTest = (req, res) => {
   );
 };
 
-// Delete Tests
+// Delete a test
 const deleteTests = (req, res) => {
   const { id } = req.params;
 
