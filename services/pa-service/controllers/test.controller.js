@@ -30,9 +30,9 @@ const checkTestExists = (name, code, id, callback, mode) => {
 // helper function to send response when test exists
 const testExistsResponse = (res, row, name, code) => {
   if (row.name === name)
-    return res.status(400).json({ message: "Test name is alrady taken !" });
+    return res.status(400).json({ message: "Test name is already taken !" });
   else if (row.code === code)
-    return res.status(400).json({ message: "Test code is alrady taken !" });
+    return res.status(400).json({ message: "Test code is already taken !" });
 };
 
 // Create a test
